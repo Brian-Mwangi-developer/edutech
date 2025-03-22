@@ -4,14 +4,19 @@
  */
 import "./src/env.js";
 
-/** @type {import("next").NextConfig} */
-const config = {
-typescript:{
-ignoreBuildErrors:true,
-},
-eslint:{
-ignoreDuringBuilds:true,
-}
-};
+    /** @type {import("next").NextConfig} */
+    const config = {
+        typescript:{
+        ignoreBuildErrors:true,
+         },
+        images: {
+            domains: [
+                'firebasestorage.googleapis.com',
+            ],
+        },
+        eslint:{
+        ignoreDuringBuilds:true,
+        }
+    };
 
-export default config;
+    export default config;
