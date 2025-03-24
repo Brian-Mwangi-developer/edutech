@@ -73,7 +73,7 @@ Ensure that your output strictly follows the JSON schema above and that every fi
 
     const data = await response.json();
     const aiResponse = data?.choices?.[0]?.message?.content || "No response from AI.";
-    console.log("AI Response:", aiResponse);
+    // console.log("AI Response:", aiResponse);
     return new Response(aiResponse, { status: 200 });
 
   } catch (error) {

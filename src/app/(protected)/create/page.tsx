@@ -57,7 +57,6 @@ const CreateCourse = () => {
     const BASIC_PROMPT="Generate A course Tutorial on following detail with field as Course Name, description Along with ChapterName, about,Duration. ";
     const USER_INPUT_PROMPT='Category:'+userCourseInput?.category+',Topic:'+userCourseInput?.topic+',Level:'+userCourseInput?.level+',Duration:'+userCourseInput.duration+',NoOfChapters:'+userCourseInput?.noOfchapter+',In JSON format';
     const FINAL_PROMPT = BASIC_PROMPT + USER_INPUT_PROMPT;
-    console.log(FINAL_PROMPT)
     const result = await fetch('/api/outline-gen', {
       method: 'POST',
       headers: {
@@ -66,7 +65,7 @@ const CreateCourse = () => {
       body: JSON.stringify({ prompt: FINAL_PROMPT }),
     })
     const responseData = await result.json();
-    console.log(responseData);
+
     try {
       const courseId = await SaveCourseLayoutInDb(responseData, userCourseInput);
       router.replace(`/create/${courseId}`);

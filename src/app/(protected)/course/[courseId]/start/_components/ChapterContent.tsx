@@ -10,7 +10,7 @@ const opts ={
 }
 
 const ChapterContent = ({chapter,content}: {chapter:any,content:any}) => {
-  console.log("Content",content)
+
   return (
     <div className="p-10">
       <h2 className="font-medium text-2xl">{chapter?.ChapterName}</h2>

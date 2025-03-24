@@ -41,3 +41,34 @@ model Chapter {
   videoId   String
   createdAt DateTime @default(now())
 }
+
+model Discussions {
+  id             String   @id @default(cuid())
+  coachingOption String
+  discussion     String?
+  topic          String
+  expertName     String
+  expertvoice    String
+  fileName       String?
+  createdBy      String
+  createdAt      DateTime @default(now())
+}
+
+model Document {
+  id        Int               @id @default(autoincrement())
+  title     String
+  fileName  String
+  content   String // full extracted text
+  createdAt DateTime          @default(now())
+  sections  DocumentSection[]
+}
+
+model DocumentSection {
+  id             Int      @id @default(autoincrement())
+  document       Document @relation(fields: [documentId], references: [id])
+  documentId     Int
+  content        String
+  azureSearchKey String?
+  order          Int
+  createdAt      DateTime @default(now())
+}
