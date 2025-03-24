@@ -4,20 +4,20 @@ import {Puzzle} from 'lucide-react'
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
 // import EditCourseBasicInfo from "@/app/create-course/[courseId]/_components/EditCourseBasicInfo";
-// import {storage} from '@/configs/firebaseConfig'
-// import {ref,uploadBytes,getDownloadURL} from "firebase/storage"
-// import {db} from "@/configs/db";
+import {storage} from '@/configs/firebaseConfig'
+import {ref,uploadBytes,getDownloadURL} from "firebase/storage"
+import {db} from "@/server/db"
 // import {CourseList} from "@/configs/schema";
 // import {eq} from "drizzle-orm";
 const CourseBasicInfo = ({course, edit=true}:{course:any, edit:boolean}) => {
-  const [ selectedFile,setSelectedFile]=useState()
+  const [ selectedFile,setSelectedFile]=useState<any|null>()
 
   useEffect(() => {
     if(course){
       setSelectedFile(course?.courseImage)
     }
   }, [course]);
-  // const onFileSelected=async(event)=>{
+  // const onFileSelected=async(event:any)=>{
   //   const file = event.target.files[0]
   //   setSelectedFile(URL.createObjectURL(file))
   //   const fileName = Date.now()+'.jpg'

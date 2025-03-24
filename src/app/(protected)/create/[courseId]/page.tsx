@@ -84,7 +84,7 @@ export default function Page() {
           <h2 className="font-bold text-center text-2xl">
             {course.courseOutput.CourseName}
           </h2>
-          <CourseBasicInfo course={course} />
+          <CourseBasicInfo course={course} edit={false} />
           <CourseDetail course={course}/>
           <ChapterList course={course}/>
           <Button className="my-10" onClick={GenerateChapterContent}>Generate Course Content</Button>

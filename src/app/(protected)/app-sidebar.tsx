@@ -23,8 +23,8 @@ const Items =[
     icon:LayoutDashboard
   },
   {
-    title:"Q&A",
-    url:"/qa",
+    title:"discusssions",
+    url:"/discussions",
     icon:Bot,
   },
   {

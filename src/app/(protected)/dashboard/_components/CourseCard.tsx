@@ -7,7 +7,7 @@ const CourseCard = ({course}:{course:any}) => {
     <div className="shadow-sm rounded-lg flex flex-col gap-1 border p-2 border-gray-300
     hover:scale-105 transition-all cursor-pointer mt-4">
       <Link href={'/course/'+course?.id}>
-      <Image src={course.courseImage} alt="Image" width={100} height={100} className="w-full h-[250px] rounded-lg object-cover"/>
+      <Image src={course.courseImage|| '/placeholder.jpg'} alt="Image" width={100} height={100} className="w-full h-[250px] rounded-lg object-cover"/>
       <div className="p-2">
         <h2 className="font-medium text-lg">{course?.courseOutput.CourseName}</h2>
         <p className="text-sm text-gray-500">{course?.category}</p>
